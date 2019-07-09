@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="entradaneta.json"></script>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 p-3">
+                <div style="width: 100%; height:100%;" id="map">
+                </div>
+
+
+            </div>
+            <div class="col-md-6 p-2">
+                <h1>Condiciones climatológicas</h1>
+                <h4>(v0.1 Alpha || José López)</h4>
+                <div id="addfile form-group">
+                    <label for="exampleFormControlFile1">Archivo de Lecturas</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" onchange="abrircsv(this.files)">
+                </div>
+                <div id="adddir">
+                    <label for="exampleFormControlFile1">Búsqueda simple</label>
+                    <div class="input-group">
+
+                        <input id="callesimple" type="text" class="form-control" placeholder="Dirección">
+                        <div class="input-group-append">
+                            <button id="buscarcallesimple" class="btn btn-secondary" type="button" onclick="directgeocode()">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="addcoor">
+                    <label for="exampleFormControlFile1">Búsqueda Por coordenadas</label>
+                    <div class="row">
+                        <div class="col-md-6 p-2">
+                            <input id="simplelat" class="form-control" type="text" placeholder="Latitud">
+                        </div>
+                        <div class="col-md-6 p-2">
+                            <div class="input-group">
+                                <input id="simplelng" type="text" class="form-control" placeholder="Longitud">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button" onclick="directdarksky()">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="resultados" style="background-color:#f2f2f2; overflow:scroll; height: 50%;" class="p-2">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+
+</script>
+<script src="js/pintamapa.js">
+
+</script>
+<script src="js/climadeentrada.js">
+
+</script>
+<script>
+
+
+</script>
+<script src="js/csvtojson.js">
+
+</script>
+
+</html>
